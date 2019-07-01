@@ -1,4 +1,4 @@
-## This is simple to to list made by react
+## This is simple to do list made by react
 
 ### preparation
 
