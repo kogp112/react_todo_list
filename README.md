@@ -1,8 +1,10 @@
-## This is simple to to list made by react
+## This is simple to do list made by react
 
 ### preparation
 
 $ npm install -g create-react-app
+
+$ create-react-app app-name
 
 $ npm install @material-ui/core
 
