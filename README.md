@@ -2,7 +2,7 @@
 
 This is simple to-do list made by React.js.
 
-1. Add task name and discription.
+1. Add task name and description.
 1. Delete tasks.
 
 ## development
