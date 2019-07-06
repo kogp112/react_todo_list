@@ -13,7 +13,6 @@ import { green } from '@material-ui/core/colors';
 import Avatar from '@material-ui/core/Avatar';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 
-
 const styles = {
   root: {
     width: '80%',
@@ -45,97 +44,97 @@ class App extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-          lists:[],
-          title: "",
-          description: ""
+        lists:[],
+        title: '',
+        description: ''
       };
       
       this.handleChange = this.handleChange.bind(this);
     }
     
-    handleChange(event) {
-        this.setState({[event.target.name]: event.target.value});
+    handleChange = (event) => {
+      this.setState({[event.target.name]: event.target.value});
     }
     
     handleSubmit = (event) => {
-        event.preventDefault();
-        this.setState({
-            lists: [
-                ...this.state.lists,
-                {
-                    title: this.state.title,
-                    description: this.state.description
-                }],
-            title: "",
-            description:""
-        })
+      event.preventDefault();
+      this.setState({
+        lists: [
+          ...this.state.lists,
+            {
+              title: this.state.title,
+                description: this.state.description
+            }],
+            title: '',
+            description:''
+      })
     }
     
-    handleRemove = (event) => {
+    handleRemove = () => {
       this.setState({
         lists:[]
       })
     }
     
     render(){
-        return (
-            <div className="App">
-              <header className="App-header">
-                <h1 align="center">
-                  React ToDo List
-                </h1>
-                <div align="center">
-                  <Avatar className={this.props.classes.greenAvatar}>
-                    <AssignmentIcon />
+      return (
+        <div className="App">
+          <header className="App-header">
+            <h1 align="center">
+              React ToDo List
+            </h1>
+            <div align="center">
+              <Avatar className={this.props.classes.greenAvatar}>
+                <AssignmentIcon />
                   </Avatar>
-                </div>
-              </header>
-              <div align="center">
-                  <TextField
-                    name="title"
-                    onChange={this.handleChange}
-                    label="Task Name"
-                    margin="dense"
-                  />
-              </div>
-              <div align="center">
-                  <TextField
-                    name="description"
-                    onChange={this.handleChange}
-                    label="Description"
-                    margin="dense"
-                  />
-              </div>
-              <div align="center">
-                <Button onClick={this.handleSubmit} className={this.props.classes.addButton}>Add</Button>
-              </div>
-              <div align="center">
-                <Paper className={this.props.classes.root}>
-                    <Table className={this.props.classes.table}>
-                        <TableHead>
-                        <TableRow>
-                            <TableCell>No</TableCell>
-                            <TableCell>Task Name</TableCell>
-                            <TableCell>Description</TableCell>
-                        </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {this.state.lists.map((l, index)=>(
-                                <TableRow key={index + 1}>
-                                    <TableCell>{index + 1}</TableCell>
-                                    <TableCell>{l.title}</TableCell>
-                                    <TableCell>{l.description}</TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </Paper>
-              </div>
-              <div align="center">
-                <Button onClick={this.handleRemove} className={this.props.classes.removeButton}>✖</Button>
-              </div>
             </div>
-          );
+          </header>
+          <div align="center">
+            <TextField
+              name="title"
+              onChange={this.handleChange}
+              label="Task Name"
+              margin="dense"
+            />
+          </div>
+          <div align="center">
+            <TextField
+              name="description"
+              onChange={this.handleChange}
+              label="Description"
+              margin="dense"
+            />
+          </div>
+          <div align="center">
+            <Button onClick={this.handleSubmit} className={this.props.classes.addButton}>Add</Button>
+          </div>
+          <div align="center">
+            <Paper className={this.props.classes.root}>
+              <Table className={this.props.classes.table}>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>No</TableCell>
+                    <TableCell>Task Name</TableCell>
+                    <TableCell>Description</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {this.state.lists.map((l, index)=>(
+                    <TableRow key={index}>
+                      <TableCell>{index + 1}</TableCell>
+                      <TableCell>{l.title}</TableCell>
+                      <TableCell>{l.description}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Paper>
+          </div>
+          <div align="center">
+            <Button onClick={this.handleRemove} className={this.props.classes.removeButton}>✖</Button>
+          </div>
+        </div>
+      );
     }
 }
 

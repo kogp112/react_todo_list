@@ -1,13 +1,32 @@
-## This is simple to do list made by react
+# React ToDo List
 
-### preparation
+This is simple to-do list made by React.js.
 
+Add task name and discription.
+Delete tasks.
+
+## development
+
+### ・use create-react-app
+```
 $ npm install -g create-react-app
+```
 
-$ create-react-app app-name
+### ・make your app
+```
+$ create-react-app appname
+```
 
+### ・install material ui
+```
+$ cd appname
 $ npm install @material-ui/core
-
 $ npm install @material-ui/icons
+```
+### ・modify App.js
+
+### ・run at local
 
 $ npm start
+
+open browser http://localhost:3000
