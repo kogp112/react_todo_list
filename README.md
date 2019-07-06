@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # React ToDo List
 
 This is simple to-do list made by React.js.
@@ -29,12 +28,6 @@ $ npm install @material-ui/icons
 ### ・run at local
 
 $ npm start
-<<<<<<< HEAD
 
 open browser http://localhost:3000
-=======
-```
 
-![img](images/image.png)
-
->>>>>>> 45c8b01021d17201bc6e79868d793ee9c6872c3d
